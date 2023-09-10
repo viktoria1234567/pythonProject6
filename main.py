@@ -1,5 +1,4 @@
 import subprocess
-import paramiko
 subprocess.run()
 # This is a sample Python script.
 
