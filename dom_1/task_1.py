@@ -6,7 +6,7 @@
 import subprocess
 
 
-def test(comm, text):
+def ttest(comm, text):
     result = subprocess.run(comm, shell=True, stdout=subprocess.PIPE, encoding='utf-8')
     # print(result.stdout)
     if text in result.stdout:
@@ -15,4 +15,4 @@ def test(comm, text):
         return False
 
 
-test("cat /etc/os-release", "22.04.1")
+ttest("cat /etc/os-release", "22.04.1")
