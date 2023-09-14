@@ -48,8 +48,8 @@ def make_bad_arx():
     yield "arxbad"
     checkout("rm -f {}/arxbad.{}".format(data["folder_out"], data["type"]), "")
 
-# @pytest.fixture(autouse=True)
-# def stat():
-#     yield
-#     stat = getout("cat /proc/loadavg")
-#     checkout("echo 'time: {} count:{} size: {} load: {}'>> stat.txt".format(datetime.now().strftime("%H:%M:%S.%f"), data["count"], data["bs"], stat), "")
+@pytest.fixture(autouse=True)
+def stat():
+    yield
+    stat = getout("cat /proc/loadavg")
+    checkout("echo 'time: {} count:{} size: {} load: {}'>> stat.txt".format(datetime.now().strftime("%H:%M:%S.%f"), data["count"], data["bs"], stat), "")
