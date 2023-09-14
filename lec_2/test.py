@@ -11,7 +11,7 @@ class TestPositive:
         res1 = checkout("cd {}; 7z a {}/arx -t{}".format(data["folder_in"], data["folder_out"], data["type"]),
                         "Everything is Ok")
         res2 = checkout("ls {}".format(data["folder_out"]), "arx.{}".format(data["type"]))
-        assert res1 and res2, "test1 FAILs"
+        assert res1 and res2, "test1 FAIL"
 
     def test_step2(self, clear_folders, make_files):
         # test2
